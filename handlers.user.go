@@ -58,6 +58,7 @@ func performLogin(c *gin.Context) {
 
 		data := gin.H{
 			"title": "Successful Login",
+			"url":   "http://localhost:8080",
 		}
 		render(c, data, "login-successful.html")
 

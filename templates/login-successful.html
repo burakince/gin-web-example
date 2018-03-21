@@ -4,4 +4,10 @@
   You have successfully logged in.
 </div>
 
+<script>
+    setTimeout(function() {
+        window.location='{{ .url }}'
+    }, 3000);
+</script>
+
 {{ template "footer.html" .}}
