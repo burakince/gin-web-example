@@ -12,5 +12,10 @@ func initializeRoutes() {
 		userRoutes.GET("/logout", logout)
 	}
 
-	router.GET("/article/view/:article_id", getArticle)
+	articleRoutes := router.Group("/article")
+	{
+		articleRoutes.GET("/view/:article_id", getArticle)
+		articleRoutes.GET("/create", showArticleCreationPage)
+		articleRoutes.POST("/create", createArticle)
+	}
 }
