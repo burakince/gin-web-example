@@ -1,6 +1,11 @@
 package main
 
+import (
+	"github.com/gin-contrib/location"
+)
+
 func initializeRoutes() {
+	router.Use(location.Default())
 	router.Use(setUserStatus())
 	router.GET("/", showIndexPage)
 

@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/gin-contrib/location"
 	"github.com/gin-gonic/gin"
 )
 
@@ -55,10 +56,11 @@ func performLogin(c *gin.Context) {
 	if isUserValid(username, password) {
 		token := generateSessionToken()
 		c.SetCookie("token", token, 3600, "", "", false, true)
+		url := location.Get(c)
 
 		data := gin.H{
 			"title": "Successful Login",
-			"url":   "http://localhost:8080",
+			"url":   url.String(),
 		}
 		render(c, data, "login-successful.html")
 
