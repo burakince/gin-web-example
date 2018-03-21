@@ -60,7 +60,7 @@ func performLogin(c *gin.Context) {
 
 		data := gin.H{
 			"title": "Successful Login",
-			"url":   url.String(),
+			"url":   url,
 		}
 		render(c, data, "login-successful.html")
 
