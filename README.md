@@ -12,3 +12,15 @@ This will build your application and create an executable named app which you ca
 ```
 ./app
 ```
+
+This will build docker image
+
+```
+docker build -t gin-web-example .
+```
+
+This will run docker image on port 80
+
+```
+docker run -d -p 80:8080 gin-web-example
+```
