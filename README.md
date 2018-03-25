@@ -1,4 +1,5 @@
 # gin-web-example
+
 Gin Web Example
 
 To execute the application from the command line, go to your application directory and execute the following command:
@@ -12,6 +13,8 @@ This will build your application and create an executable named app which you ca
 ```
 ./app
 ```
+
+# Docker
 
 This will build docker image
 
