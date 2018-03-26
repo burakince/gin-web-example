@@ -14,7 +14,7 @@ func main() {
 
 	initializeRoutes()
 
-	router.Run()
+	router.Run(":3000")
 }
 
 func render(c *gin.Context, data gin.H, templateName string) {
