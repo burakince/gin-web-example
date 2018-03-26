@@ -22,8 +22,8 @@ This will build docker image
 docker build -t gin-web-example .
 ```
 
-This will run docker image on port 80
+This will run docker image on port 3000
 
 ```
-docker run -d -p 80:8080 gin-web-example
+docker run -d -p 80:3000 gin-web-example
 ```
