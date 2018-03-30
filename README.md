@@ -27,3 +27,9 @@ This will run docker image on port 3000
 ```
 docker run -d -p 80:3000 gin-web-example
 ```
+
+# Go Package
+
+```
+https://gopkg.in/burakince/gin-web-example.v1.0.0
+```
