@@ -1,11 +1,11 @@
-FROM golang:1.10.0-alpine AS build
+FROM golang:1.10.1-alpine3.7 AS build
 
 RUN apk --no-cache add git
 RUN go get -d -v github.com/gin-gonic/gin github.com/gin-contrib/location
 ADD . /go/src/github.com/burakince/gin-web-example
 RUN go install github.com/burakince/gin-web-example
 
-FROM alpine:latest
+FROM alpine:3.7
 
 RUN apk --no-cache add --update \
   ca-certificates
