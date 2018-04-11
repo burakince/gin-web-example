@@ -1,0 +1,11 @@
+language: generic
+sudo: required
+services:
+- docker
+after_success:
+  # for local testing, needs to be set on travis, too:
+  # export HEROKU_TOKEN=$(heroku auth:token)
+- docker login -u _ -p "$HEROKU_TOKEN"  registry.heroku.com
+- docker build -t registry.heroku.com/gin-web-example/web .
+- docker push registry.heroku.com/gin-web-example/web
+- heroku run --app gin-web-example
