@@ -14,7 +14,7 @@ func main() {
 
 	initializeRoutes()
 
-	router.Run(":3000")
+	router.Run(":" + getEnv("PORT", "3000"))
 }
 
 func render(c *gin.Context, data gin.H, templateName string) {
@@ -29,4 +29,11 @@ func render(c *gin.Context, data gin.H, templateName string) {
 	default:
 		c.HTML(http.StatusOK, templateName, data)
 	}
+}
+
+func getEnv(key, fallback string) string {
+    if value, ok := os.LookupEnv(key); ok {
+        return value
+    }
+    return fallback
 }
