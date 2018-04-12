@@ -3,6 +3,6 @@ sudo: required
 services:
 - docker
 after_success:
-- echo "$HEROKU_TOKEN" | docker login --username=_ --password-stdin registry.heroku.com
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin registry.heroku.com
 - docker build -f Dockerfile -t registry.heroku.com/gin-web-example/web .
 - docker push registry.heroku.com/gin-web-example/web
