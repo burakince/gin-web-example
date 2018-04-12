@@ -4,7 +4,7 @@ services:
 - docker
 after_success:
 - echo "$HEROKU_TOKEN" | docker login -u _ --password-stdin registry.heroku.com
-- heroku container:login
+- echo "$HEROKU_TOKEN" | heroku container:login -u _ --password-stdin
 - docker build -t registry.heroku.com/gin-web-example/web .
 - docker push registry.heroku.com/gin-web-example/web
 - heroku container:push web -a gin-web-example
