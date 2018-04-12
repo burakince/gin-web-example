@@ -5,5 +5,5 @@ services:
 after_success:
   # for local testing, needs to be set on travis, too:
   # export HEROKU_TOKEN=$(heroku auth:token)
-- heroku container:login
+- echo "$HEROKU_TOKEN" | heroku container:login --password-stdin
 - heroku container:push web
