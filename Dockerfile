@@ -15,4 +15,4 @@ WORKDIR /http-server
 COPY --from=build /go/bin/gin-web-example /http-server/gin-web-example
 COPY --from=build /go/src/github.com/burakince/gin-web-example/templates /http-server/templates
 
-ENTRYPOINT ["/http-server/gin-web-example"]
+CMD "/http-server/gin-web-example"
