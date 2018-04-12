@@ -5,7 +5,5 @@ services:
 after_success:
   # for local testing, needs to be set on travis, too:
   # export HEROKU_TOKEN=$(heroku auth:token)
-- echo "$HEROKU_TOKEN" | docker login -u _ --password-stdin registry.heroku.com
-- docker build -t registry.heroku.com/gin-web-example/web -f Dockerfile.web .
-- docker push registry.heroku.com/gin-web-example/web
-- heroku heroku open -a gin-web-example
+- heroku container:login
+- heroku container:push web
