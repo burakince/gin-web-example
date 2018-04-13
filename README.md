@@ -1,6 +1,6 @@
 # gin-web-example
 
-Gin Web Example
+Gin Web Example [![Build Status](https://travis-ci.org/burakince/gin-web-example.svg?branch=master)](https://travis-ci.org/burakince/gin-web-example)
 
 To execute the application from the command line, go to your application directory and execute the following command:
 
