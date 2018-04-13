@@ -28,6 +28,10 @@ This will run docker image on port 3000
 docker run -d -p 80:3000 gin-web-example
 ```
 
+# Demo
+
+Demo page is <gin-web-example.herokuapp.com>
+
 # Go Package
 
 ```
