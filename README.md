@@ -30,7 +30,7 @@ docker run -d -p 80:3000 gin-web-example
 
 # Demo
 
-Demo page is <gin-web-example.herokuapp.com>
+Demo page is <https://gin-web-example.herokuapp.com/>
 
 # Go Package
 
