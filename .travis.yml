@@ -1,7 +1,13 @@
-language: generic
+language: go
+go:
+- '1.10'
 sudo: required
 services:
 - docker
+install:
+- go get -d -v github.com/gin-gonic/gin github.com/gin-contrib/location
+script:
+- go test
 after_success:
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin registry.heroku.com
 - docker build -f Dockerfile -t registry.heroku.com/gin-web-example/web .
